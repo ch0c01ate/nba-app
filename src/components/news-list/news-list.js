@@ -23,10 +23,27 @@ export default class NewsList extends React.Component {
         }
     }
 
+    componentDidMount() {
+        fetch('news').then(resp => {
+            return resp.json();
+        }).then(body => {
+            console.log(body);
+            this.setState({
+                news: body
+            });
+        })
+    }
+
     toggleIsLiked(id){
         this.setState((state) => ({
             news: state.news.map(n => n.id === id ? {...n, isLiked: !n.isLiked} : n)
         }))
+    }
+
+    updateList(update){
+        this.setState((state) => ({
+            news: [...this.state.news, ...update],
+        }));
     }
 
     render() {

@@ -1,4 +1,4 @@
-ul {
+.nav-bar-elements {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -7,11 +7,11 @@ ul {
     width: 100%;
 }
 
-li {
+.nav-bar-elements li {
     float: left;
 }
 
-li a {
+.nav-bar-elements li a {
     display: block;
     color: white;
     text-align: center;
@@ -19,7 +19,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.first-li) {
+.nav-bar-elements li a:hover:not(.first-li) {
     background-color: #111;
 }
 
