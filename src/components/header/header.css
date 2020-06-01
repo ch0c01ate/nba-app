@@ -1,0 +1,36 @@
+.nav-bar-elements {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2b2c2d;
+    width: 100%;
+}
+
+.nav-bar-elements li {
+    float: left;
+}
+
+.nav-bar-elements li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+.nav-bar-elements li a:hover:not(.first-li) {
+    background-color: #111;
+}
+
+.first-li:hover {
+    background-color: #ff3435;
+}
+
+.nav-bar-elements li:last-child {
+    float: right;
+}
+
+.nav-bar-elements li:first-child {
+    background-color: red;
+}
