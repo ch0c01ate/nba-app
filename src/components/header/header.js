@@ -8,10 +8,11 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <ul className="nav-bar-elements">
-                    <li><Link to="/" classname="first-li">Home</Link></li>
+                    <li><Link to="/" className="first-li">Home</Link></li>
                     <li><Link to="/leaders">League Leaders</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                     <li><Link to="/about">About</Link></li>
+                    <li><Link to="/signUp">Sign Up</Link></li>
                 </ul>
             </div>
         )
