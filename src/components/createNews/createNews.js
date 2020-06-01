@@ -1,28 +1,31 @@
 import React from "react";
 import "./createNews.css"
 import CreateNewsForm from "../createNewsForm/createNewsForm";
+import {createNews} from "../../actions";
+import {connect} from "react-redux";
 
-export default class CreateNews extends React.Component {
+class CreateNews extends React.Component {
 
-    addNewPost(title, image) {
-        const newPost = { title: title, image: image, isLiked: false }
-
-        fetch('news', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newPost)
-        }).then((e) => {
-            return e.json()
-        });
+    addNewPost(title, image, description) {
+        const newPost = { title: title, image: image, description: description, isLiked: false }
+        this.props.createNews(title, image);
     }
 
     render() {
         return (
             <div className="create-form">
-                <CreateNewsForm onAdd={(title, image) => this.addNewPost(title, image)}></CreateNewsForm>
+                <CreateNewsForm onAdd={(title, image, description) => this.addNewPost(title, image, description)}></CreateNewsForm>
             </div>
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    news: state.news
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    createNews: () => dispatch(createNews()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateNews)

@@ -1,7 +1,7 @@
 import React from "react";
 
 const NewsItem = ({n, toggleIsLiked}) => (
-    <a className="news-link" href="http://www.google.com">
+    <a className="news-link" href={ "news/" + n.id }>
     <div className="news-list-item">
         <img className="news-list-item-image" alt="photo" src={n.image}/>
         <div className="news-list-item-container">

@@ -10,6 +10,7 @@ export default class CreateNewsForm extends React.Component {
         this.state = {
             title: '',
             image: '',
+            description: '',
             submitted: false,
         }
     }
@@ -17,7 +18,7 @@ export default class CreateNewsForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
 
-        this.props.onAdd(this.state.title, this.state.image);
+        this.props.onAdd(this.state.title, this.state.image, this.state.description);
         this.setState( {submitted: true});
     }
 
@@ -41,6 +42,8 @@ export default class CreateNewsForm extends React.Component {
                     <input placeholder="Title" onChange={(e) => this.handleChange(e, "title")}></input>
                     <label>Image URL</label>
                     <input placeholder="Image URL" onChange={(e) => this.handleChange(e, "image")}></input>
+                    <label>Description</label>
+                    <input placeholder="Description" onChange={(e) => this.handleChange(e, "description")}></input>
                     <input id="submit" type="submit" value="Create"></input>
                 </form>
                 {this.renderRedirect()}
